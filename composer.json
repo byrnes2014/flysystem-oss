@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Overtrue\\Flysystem\\Oss\\": "src"
+            "Byrnes2014\\Flysystem\\Oss\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Overtrue\\Flysystem\\Oss\\Tests\\": "tests"
+            "Byrnes2014\\Flysystem\\Oss\\Tests\\": "tests"
         }
     },
     "authors": [
