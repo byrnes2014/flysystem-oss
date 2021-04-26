@@ -2,7 +2,6 @@
 
 <p align="center"> .</p>
 
-
 ## Installing
 
 ```shell
@@ -12,17 +11,45 @@ $ composer require byrnes2014/flysystem-oss -vvv
 ## Usage
 
 ```php
-    use Byrnes2014\Flysystem\Qiniu\QiniuAdapter;
+    use Byrnes2014\Flysystem\Oss\QssAdapter;
 ```
-## Contributing
 
-You can contribute in one of three ways:
+## Api
 
-1. File bug reports using the [issue tracker](https://github.com/byrnes2014/flysystem-oss/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/byrnes2014/flysystem-oss/issues).
-3. Contribute new features or update the wiki.
+```php
 
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
+ $flysystem->write('file.md', 'contents');
+
+ $flysystem->write('file.md', 'http://httpbin.org/robots.txt', ['mime' => 'application/redirect302']);
+ 
+ $flysystem->writeStream('file.md', fopen('path/to/your/local/file.jpg', 'r'));
+
+ $flysystem->update('file.md', 'new contents');
+
+ $flysystem->updateStream('file.md', fopen('path/to/your/local/file.jpg', 'r'));
+
+ $flysystem->rename('foo.md', 'bar.md');
+
+ $flysystem->copy('foo.md', 'foo2.md');
+
+ $flysystem->delete('file.md');
+
+ $flysystem->has('file.md');
+
+string|false $flysystem->read('file.md');
+
+array $flysystem->listContents();
+
+array $flysystem->getMetadata('file.md');
+
+int $flysystem->getSize('file.md');
+
+string $flysystem->getAdapter()->getUrl('file.md'); 
+
+string $flysystem->getMimetype('file.md');
+
+int $flysystem->getTimestamp('file.md');
+```
 
 ## License
 
