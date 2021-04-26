@@ -1,0 +1,39 @@
+{
+    "name": "byrnes2014/flysystem-oss",
+    "type": "library",
+    "description": "Flysystem adapter for the Oss storage.",
+    "keywords": [
+        "filesystem",
+        "filesystems",
+        "files",
+        "storage",
+        "oss",
+        "file systems"
+    ],
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "aliyuncs/oss-sdk-php": "^2.4",
+        "league/flysystem": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8.0",
+        "mockery/mockery": "1.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Overtrue\\Flysystem\\Oss\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Overtrue\\Flysystem\\Oss\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "byrnes2014",
+            "email": "76119622@qq.com"
+        }
+    ],
+    "license": "MIT"
+}
