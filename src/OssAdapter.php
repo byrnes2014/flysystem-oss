@@ -22,6 +22,7 @@ class OssAdapter extends AbstractAdapter
     public function __construct(OssClient $client, string $bucket, string $prefix = '')
     {
         $this->client = $client;
+        $this->bucket = $bucket;
         $this->setPathPrefix($prefix);
 
     }
