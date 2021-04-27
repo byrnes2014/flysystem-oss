@@ -24,7 +24,6 @@ class OssAdapter extends AbstractAdapter
         $this->client = $client;
         $this->bucket = $bucket;
         $this->setPathPrefix($prefix);
-
     }
 
     public function write($path, $contents, Config $config): bool
@@ -161,6 +160,12 @@ class OssAdapter extends AbstractAdapter
         $object = $this->getMetadata($path);
         $object['timestamp'] = strtotime($object['last-modified']);
         return $object;
+    }
+
+    public function getUrl($path)
+    {
+        $metaData = $this->getMetadata($path);
+        return $metaData['oss-request-url'];
     }
 
 }
